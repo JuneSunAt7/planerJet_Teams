@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>940</width>
+    <height>732</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.449, stop:0 rgba(250, 187, 254, 255), stop:1 rgba(156, 167, 255, 255));</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="addButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(145, 188, 125);
+font: 75 24pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 15px;</string>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="currButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(160, 254, 255);
+border-radius: 15px;</string>
+    </property>
+    <property name="text">
+     <string>Current</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="fireTaskButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>10</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 124, 115);
+border-radius: 15px;
+border-color: rgb(255, 115, 0);</string>
+    </property>
+    <property name="text">
+     <string>Fire tasks</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="weekButton">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>141</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(118, 141, 206);
+border-radius: 15px;</string>
+    </property>
+    <property name="text">
+     <string>Week</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="archiveButton">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>10</y>
+      <width>131</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(250, 255, 144);
+border-radius:15px;</string>
+    </property>
+    <property name="text">
+     <string>Archive</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>100</y>
+      <width>661</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(190, 247, 255, 255), stop:1 rgba(184, 255, 207, 255));
+border-radius:15px;</string>
+    </property>
+    <row>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>4</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>5</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>7</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>9</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>task</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>deadline</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>time</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>difficult</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>resourses</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>70</y>
+      <width>721</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="lblTaskName">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(118, 141, 206);
+border-radius: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Task name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="deadlineTask">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(118, 141, 206);
+border-radius: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Deadline</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDiff">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(118, 141, 206);
+border-radius: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Difficulty</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="resoursesLbl">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(118, 141, 206);
+border-radius: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Resourses</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineInputTask">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>501</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(160, 254, 255);
+border-radius: 15px;</string>
+     </property>
+    </widget>
+    <widget class="QDateTimeEdit" name="deadlineTime">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>90</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(160, 254, 255);
+border-radius: 15px;</string>
+     </property>
+    </widget>
+    <widget class="QSlider" name="difficultSlider">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>170</y>
+       <width>160</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(160, 254, 255);
+border-radius: 15px;</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="outputCountDiff">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>170</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(160, 254, 255);
+border-radius: 15px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="resoursesList">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>230</y>
+       <width>471</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(249, 249, 163, 255), stop:1 rgba(255, 226, 192, 255));
+border-radius:15px;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="bthAdd">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>370</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(145, 188, 125);
+font: 75 20pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Add task</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>400</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 124, 115);
+border-radius: 15px;
+border-color: rgb(255, 115, 0);</string>
+     </property>
+     <property name="text">
+      <string>Search resourses</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="weekFrame">
+    <property name="geometry">
+     <rect>
+      <x>-30</x>
+      <y>110</y>
+      <width>781</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="todayLbl">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>71</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 15px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(180, 247, 250, 255), stop:1 rgba(192, 255, 197, 255));
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Today:</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="todayTableview">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>30</y>
+       <width>391</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:15px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0.523, x2:1, y2:0.557, stop:0 rgba(190, 197, 255, 255), stop:1 rgba(174, 255, 192, 255));
+font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <column>
+      <property name="text">
+       <string>task</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>difficult</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>deadline</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="maintaskLbl">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 15px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0.466, x2:1, y2:0.465909, stop:0 rgba(255, 149, 151, 255), stop:1 rgba(255, 244, 207, 255));
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Main:</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="mainTasksView">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>170</y>
+       <width>391</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:15px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0.630682, x2:1, y2:0.688, stop:0 rgba(253, 220, 220, 255), stop:1 rgba(204, 194, 255, 255));
+font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <column>
+      <property name="text">
+       <string>task</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>difficult</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>deadline</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="fireTasksFrame">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>80</y>
+      <width>901</width>
+      <height>671</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QTableWidget" name="firedTable">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>70</y>
+       <width>561</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 251, 134, 255), stop:1 rgba(255, 169, 112, 255));
+border-radius:15px;
+font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <column>
+      <property name="text">
+       <string>task</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>resourses</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>deadline</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="firePng">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>430</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>D:/Apps/imgonline-com-ua-Resize-SaP3ra2s6GBPUg.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="firePng_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>430</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>D:/Apps/imgonline-com-ua-Resize-SaP3ra2s6GBPUg.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="firePng_3">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>430</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>D:/Apps/imgonline-com-ua-Resize-SaP3ra2s6GBPUg.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="firePng_4">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>430</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>D:/Apps/imgonline-com-ua-Resize-SaP3ra2s6GBPUg.png</pixmap>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="archiveData">
+    <property name="geometry">
+     <rect>
+      <x>-11</x>
+      <y>79</y>
+      <width>1021</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="delArchive">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>560</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 124, 115);
+border-radius: 15px;
+border-color: rgb(255, 115, 0);</string>
+     </property>
+     <property name="text">
+      <string>delete</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="arcTaskView">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>110</y>
+       <width>791</width>
+       <height>421</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(250, 255, 144);
+border-radius:15px;</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
