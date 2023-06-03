@@ -75,16 +75,16 @@ def m_to_archive():
                 if (date_object - curr_date).days < 0:
                     s += columns[0] + '.' + columns[1] + '.' + columns[2] + '.' + columns[3]
                     plyer.notification.notify(message='Task ' + str(columns[0] + ' moved to archive'),
-                                              app_name='PlanerJet Alone',
+                                              app_name='PlanerJet Teams',
                                               title='Archive', )
 
                     with open('ARC.csv', 'a+', encoding='utf-8') as arc:
                         arc.write(columns[0] + ';' + str(curr_date) + '\n')
                     lines.remove(line.replace('\n', ''))
-    s = s.replace("\n", ',')
-    with open('CURR.csv', 'w', encoding='utf-8') as rewrite:
-        for elem in lines:
-            rewrite.write('\n'+elem)
+                    s = s.replace("\n", ',')
+                    with open('CURR.csv', 'w', encoding='utf-8') as rewrite:
+                        for elem in lines:
+                            rewrite.write('\n'+elem)
 
 
 def move_to_arch_custom(element, data):
@@ -94,7 +94,7 @@ def move_to_arch_custom(element, data):
         print(lines)
         print(str(element))
     curr_date = datetime.date.today()
-    plyer.notification.notify(message='Task ' + str(data) + ' moved to archive', app_name='PlanerJet Alone', title='Archive', )
+    plyer.notification.notify(message='Task ' + str(data) + ' moved to archive', app_name='PlanerJet Teams', title='Archive', )
     lines.pop(element)
     with open('ARC.csv', 'a+', encoding='utf-8') as arc:
         arc.write(str(data) + ';' + str(curr_date) + '\n')
@@ -106,7 +106,7 @@ def move_to_arch_custom(element, data):
 
 
 def wr_to_main_file(taskname, deadline, diff, resources):
-    data = str(taskname).replace('\n', ' ').replace(',', ' ')+';'+ deadline+';'+ diff+';'+ str(resources).replace('\n', ' ').replace(',', ' ')
+    data = str(taskname).replace(',', ' ')+';'+ deadline+';'+ diff+';'+ str(resources).replace('\n', ' ').replace(',', ' ')
 
     with open('CURR.csv', 'a', encoding='utf-8') as file:
         file.write('\n'+data)

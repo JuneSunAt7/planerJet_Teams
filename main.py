@@ -25,6 +25,7 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         self.tableWidget.itemDoubleClicked.connect(self.ready_task)
         self.delArchive.clicked.connect(self.deleteArc)
         self.tableWidget.itemClicked.connect(self.start_timers)
+        self.teamsButton.clicked.connect(self.teams)
 
         self.difficultSlider.setRange(0, 5)
         self.difficultSlider.setValue(3)
@@ -52,7 +53,7 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
                     if timer <= 3:
                         if i < 1:
                             plyer.notification.notify(message='Time to execute ' + str(data[0] + ' will end soon!'),
-                                                      app_name='PlanerJet Alone',
+                                                      app_name='PlanerJet Teams',
                                                       title='Archive', )
                     self.tableWidget.setItem(j, 4, QTableWidgetItem(timeTask))
                     with open('stat.pj', 'r', encoding='utf-8') as timetracker:
@@ -63,7 +64,6 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
                             else:
                                 if columns[0] == data[i]:
                                     self.tableWidget.item(j, 0).setBackground(QtGui.QColor(150, 255, 70))
-
 
         if len(filemanagment.read_curr()) != 0:
             filemanagment.m_to_archive()
@@ -201,23 +201,23 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
                           "border-radius:15px;")
         msg.exec()
 
-
+    def teams(self):
+        teamsLogic.mainTeams()
 
 def main():
     try:
         from ctypes import windll  # Only exists on Windows.
-        myappid = 'gem13.PlanerJet.Alone.1.'
+        myappid = 'gem13.PlanerJet.Teams.1.'
         windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
     except ImportError:
         pass
     filemanagment.read_curr()
     app = QtWidgets.QApplication(sys.argv)
-    app.setWindowIcon(QtGui.QIcon('alone.ico'))
+    app.setWindowIcon(QtGui.QIcon('teams.ico'))
     window = ExampleApp()
-    window.setWindowIcon(QtGui.QIcon('alone.ico'))
+    window.setWindowIcon(QtGui.QIcon('teams.ico'))
     window.show()
-    window.setFixedSize(940, 732)
-    teamsLogic.main()
+    window.setFixedSize(1150, 732)
     app.exec_()
 
 

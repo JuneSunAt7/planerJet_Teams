@@ -16,7 +16,7 @@ from PyQt5.QtWidgets import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(940, 732)
+        MainWindow.resize(1150, 732)
         MainWindow.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(153, 215, 255, 255), stop:1 rgba(128, 145, 255, 255));")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -51,11 +51,18 @@ class Ui_MainWindow(object):
 "background-color: rgb(32, 147, 255);\n"
 "border-radius:15px;")
         self.archiveButton.setObjectName("archiveButton")
+
+        self.teamsButton = QtWidgets.QPushButton(self.centralwidget)
+        self.teamsButton.setGeometry(QtCore.QRect(960, 10, 150, 60))
+        self.teamsButton.setStyleSheet("font: 75 14pt \"MS Shell Dlg 2\";\n"
+                                         "background-color: rgb(220, 255, 144);\n"
+                                         "border-radius:15px;")
+        self.teamsButton.setObjectName("teamsButton")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.tableWidget.setShowGrid(False)
-        self.tableWidget.setGeometry(QtCore.QRect(50, 100, 861, 591))
+        self.tableWidget.setGeometry(QtCore.QRect(50, 100, 1060, 591))
         self.tableWidget.setStyleSheet("font: 75 14pt \"MS Shell Dlg 2\";\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 255, 213, 255), stop:1 rgba(184, 170, 255, 255));\n"
 "border-radius:15px;")
@@ -253,12 +260,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("PlanerJet Alone", "PlanerJet Alone"))
+        MainWindow.setWindowTitle(_translate("PlanerJet Teams", "PlanerJet Teams"))
         self.addButton.setText(_translate("MainWindow", "+"))
         self.currButton.setText(_translate("MainWindow", "Current"))
         self.fireTaskButton.setText(_translate("MainWindow", "Fire tasks"))
         self.weekButton.setText(_translate("MainWindow", "Week"))
         self.archiveButton.setText(_translate("MainWindow", "Archive"))
+        self.teamsButton.setText(_translate("MainWindow", "Teams"))
         item = self.tableWidget.verticalHeaderItem(0)
         for i in range(len(filemanagment.read_curr())):
             item.setText(_translate("MainWindow", str(i)))
