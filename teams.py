@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import *
 
 
 class Ui_Form(object):
@@ -148,7 +149,7 @@ class Ui_Form(object):
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
-        self.textBrowser = QtWidgets.QTextBrowser(self.frame_4)
+        self.textBrowser = QtWidgets.QTextEdit(self.frame_4)
         self.textBrowser.setGeometry(QtCore.QRect(20, 30, 801, 381))
         self.textBrowser.setStyleSheet("border-radius:15px;\n"
 "background-color: rgb(144, 151, 255);")
@@ -206,7 +207,7 @@ class Ui_Form(object):
 "border-radius: 15px;")
         self.difficultSlider.setOrientation(QtCore.Qt.Horizontal)
         self.difficultSlider.setObjectName("difficultSlider")
-        self.resoursesList = QtWidgets.QTextBrowser(self.frame_5)
+        self.resoursesList = QtWidgets.QTextEdit(self.frame_5)
         self.resoursesList.setGeometry(QtCore.QRect(160, 230, 471, 231))
         self.resoursesList.setStyleSheet("font: 75 14pt \"MS Shell Dlg 2\";\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(249, 249, 163, 255), stop:1 rgba(255, 226, 192, 255));\n"
@@ -247,3 +248,12 @@ class Ui_Form(object):
         self.lblDiff.setText(_translate("Form", "Difficulty"))
         self.resoursesLbl.setText(_translate("Form", "Resourses"))
         self.bthAdd.setText(_translate("Form", "Add task"))
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_Form()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

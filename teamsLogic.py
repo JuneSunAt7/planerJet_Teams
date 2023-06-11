@@ -7,10 +7,11 @@ import sys
 
 import datetime
 
-class TeamsPlugin(QtWidgets.QWidget, teams.Ui_Form):
-    def __init__(self):
-        super().__init__()
+class TeamsPlugin(QtWidgets.QMainWindow, teams.Ui_Form):
+    def __init__(self, parent=None):
+        super(TeamsPlugin, self).__init__(parent)
         self.setupUi(self)
+
         self.pushButton.clicked.connect(self.add_team)
         self.pushButton_2.clicked.connect(self.connect)
         self.pushButton_3.clicked.connect(self.settings)
@@ -43,9 +44,16 @@ class TeamsPlugin(QtWidgets.QWidget, teams.Ui_Form):
         self.frame_5.setVisible(True)
 
 
-def mainTeams():
+def main():
     app = QtWidgets.QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon('teams.ico'))
     window = TeamsPlugin()
-    window.setFixedSize(924, 682)
+    window.setWindowIcon(QtGui.QIcon('teams.ico'))
     window.show()
+    window.setFixedSize(924, 682)
     app.exec_()
+
+if __name__ == "__main__":
+    main()
+
+

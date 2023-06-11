@@ -202,7 +202,8 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         msg.exec()
 
     def teams(self):
-        teamsLogic.mainTeams()
+        pass
+
 
 def main():
     try:
@@ -219,6 +220,7 @@ def main():
     window.show()
     window.setFixedSize(1150, 732)
     app.exec_()
+
 
 
 if __name__ == '__main__':
