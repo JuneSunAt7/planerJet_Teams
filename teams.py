@@ -48,7 +48,8 @@ class Ui_Form(object):
         self.progressBar.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(168, 110, 255);\n"
 "")
-        self.progressBar.setProperty("value", 34)
+        self.progressBar.setProperty("value", 0)
+        self.progressBar.setVisible(False)
         self.progressBar.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.progressBar.setOrientation(QtCore.Qt.Horizontal)
         self.progressBar.setInvertedAppearance(False)
